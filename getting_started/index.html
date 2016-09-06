@@ -277,13 +277,15 @@
             <div class="section">
               
                 <h1 id="getting-started">Getting Started</h1>
-<p>Make sure that you have a recent version of ansible installed.
-The playbook has been tested with version 2.1.</p>
+<p>Make sure that you have a recent version of Ansible installed;
+the playbook has been tested with version 2.1.2.0.</p>
 <h1 id="getting-the-playbook">Getting the playbook</h1>
-<p>GalaxyKickStart is hosted on <a href="https://github.com/ARTbio/GalaxyKickStart.git">github</a> and makes use of submodules, so care
-needs to be taken to also download the submodules. Cloning the repository for the first time can be done like this
-(note the <code>--recursive</code>):</p>
-<pre><code>git clone --recursive https://github.com/ARTbio/GalaxyKickStart.git
+<p>GalaxyKickStart is hosted on
+<a href="https://github.com/ARTbio/GalaxyKickStart.git">github</a> and uses a number of
+dependent Ansible roles that need to be downloaded as part of the installation
+step:</p>
+<pre><code>git clone https://github.com/ARTbio/GalaxyKickStart.git
+ansible-galaxy install -r requirements_roles.yml -p roles
 </code></pre>
 
 <p>The playbook (here <code>galaxy.yml</code>) should be in the GalaxyKickStart folder.</p>
