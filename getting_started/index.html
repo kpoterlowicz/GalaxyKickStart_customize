@@ -82,6 +82,8 @@
             
                 <li class="toctree-l3"><a href="#deploying-galaxy-kickstart-on-remote-machines">Deploying galaxy-kickstart on remote machines.</a></li>
                 
+                    <li><a class="toctree-l4" href="#deploying-galaxy-kickstart-on-specified-clouds">Deploying galaxy-kickstart on specified clouds</a></li>
+                
             
             </ul>
         
@@ -317,6 +319,36 @@ This user needs to have sudo rights.</p>
 <p>You can put multiple machines in your inventory.
 If you run the playbook a second time, the process will be much faster, since steps that have already been executed will be skipped.
 Whenever you change a variable (see <a href="../customizations/">customizations</a>), you need to run the playbook again.</p>
+<h2 id="deploying-galaxy-kickstart-on-specified-clouds">Deploying galaxy-kickstart on specified clouds</h2>
+<p>Inside the repository you will find a <a href="https://github.com/ARTbio/GalaxyKickStart/tree/master/inventory_files/cloud">file</a> called
+<code>inventory_files/cloud</code>. This file serves as an example hosts file
+for how to deploy galaxy-kickstart on Google Compute Engine(gce), Amazon Web Services(aws), and Jetstream. <em>Please note
+that the <code>ansible_ssh_user</code> variable in the file changes for each remote target</em>.</p>
+<p>Specifications for each remote target:</p>
+<ul>
+<li>
+<p>Jetstream</p>
+<ul>
+<li>Image needed to deploy galaxy-kickstart:
+    <code>Ubuntu 14.04.3 Development (jetstream image id: 3c3db94e-377b-4583-83d7-082d1024d74a)</code></li>
+<li>Inventory: <code>&lt;remote host IP&gt; anisble_ssh_user="root" ansible_ssh_private_key_file="&lt;path/to/your/private/key&gt;"</code></li>
+</ul>
+</li>
+<li>
+<p>GCE</p>
+<ul>
+<li>Image needed to deploy galaxy-kickstart: <code>Ubuntu 14.04 LTS</code></li>
+<li>Inventory: <code>&lt;remote host IP&gt; anisble_ssh_user="ubuntu" ansible_ssh_private_key_file="&lt;path/to/your/private/key&gt;"</code></li>
+</ul>
+</li>
+<li>
+<p>AWS</p>
+<ul>
+<li>Image needed to deploy galaxy-kickstart: <code>Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-2d39803a</code></li>
+<li>Inventory: <code>&lt;target Amazon Web Services IP address&gt; ansible_ssh_user="ubuntu" ansible_ssh_private_key_file="&lt;path/to/your/aws/private/key&gt;"</code></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>
