@@ -76,6 +76,10 @@
             
                 <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
                 
+                    <li><a class="toctree-l4" href="#you-need-git-installed">You need git installed</a></li>
+                
+                    <li><a class="toctree-l4" href="#make-sure-that-you-have-a-recent-version-of-ansible-installed">Make sure that you have a recent version of Ansible installed</a></li>
+                
             
                 <li class="toctree-l3"><a href="#getting-the-playbook">Getting the playbook</a></li>
                 
@@ -279,27 +283,36 @@
             <div class="section">
               
                 <h1 id="getting-started">Getting Started</h1>
-<p>Make sure that you have a recent version of Ansible installed;
-the playbook has been tested with version 2.1.2.0.</p>
+<h2 id="you-need-git-installed">You need <a href="https://git-scm.com/">git</a> installed</h2>
+<h2 id="make-sure-that-you-have-a-recent-version-of-ansible-installed">Make sure that you have a recent version of <a href="https://github.com/ansible/">Ansible</a> installed</h2>
+<p>The playbook has been tested with version 2.1.2.0.
+A simple way to install the latest ansible version is using <a href="https://pip.pypa.io/en/stable/quickstart/">pip</a>:</p>
+<pre><code>git clone --recursive -b stable-2.1 https://github.com/ansible/ansible
+pip install ansible/
+</code></pre>
+
 <h1 id="getting-the-playbook">Getting the playbook</h1>
 <p>GalaxyKickStart is hosted on
 <a href="https://github.com/ARTbio/GalaxyKickStart.git">github</a> and uses a number of
 dependent Ansible roles that need to be downloaded as part of the installation
 step:</p>
 <pre><code>git clone https://github.com/ARTbio/GalaxyKickStart.git
+cd GalaxyKickStart
 ansible-galaxy install -r requirements_roles.yml -p roles
 </code></pre>
 
 <p>The playbook (here <code>galaxy.yml</code>) should be in the GalaxyKickStart folder.</p>
-<pre><code class="bash">ls GalaxyKickStart/
-CONTRIBUTORS.md  docs  extra-files  galaxy.yml  group_vars  hosts
-LICENSE.txt  mkdocs.yml  pre-commit.sh  README.md  roles  Vagrantfile
+<pre><code class="bash">ls
+CONTRIBUTORS.md     Vagrantfile     docs            inventory_files     roles
+Dockerfile      ansible.cfg     extra-files     mkdocs.yml      scripts
+LICENSE.txt     deploy.sh       galaxy.yml      pre-commit.sh       startup.sh
+README.md       dockerfiles     group_vars      requirements_roles.yml  templates
 </code></pre>
 
 <h1 id="deploying-galaxy-kickstart-on-remote-machines">Deploying galaxy-kickstart on remote machines.</h1>
 <hr />
-<p>Inside the repository you will find a hosts file.
-This is an example inventory.</p>
+<p>Inside the <code>inventory_files</code> folder, you will find a host files.
+This is an example of inventory in the <code>artimed</code> host file.</p>
 <pre><code>[artimed]
 localhost ansible_ssh_user=&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;
 ...
@@ -345,6 +358,7 @@ that the <code>ansible_ssh_user</code> variable in the file changes for each rem
 <p>AWS</p>
 <ul>
 <li>Image needed to deploy galaxy-kickstart: <code>Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-2d39803a</code></li>
+<li>Do not forget to install ansible as indicated <a href="./">above</a></li>
 <li>Inventory: <code>&lt;target Amazon Web Services IP address&gt; ansible_ssh_user="ubuntu" ansible_ssh_private_key_file="&lt;path/to/your/aws/private/key&gt;"</code></li>
 </ul>
 </li>
