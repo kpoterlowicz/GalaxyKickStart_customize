@@ -185,10 +185,9 @@ pip 9.0.1 from /usr/local/lib/python2.7/site-packages (python 2.7)
 </code></pre>
 
 <ul>
-<li>Then </li>
+<li>Then</li>
 </ul>
-<pre><code>git clone --recursive -b stable-2.2 https://github.com/ansible/ansible
-pip install ansible/
+<pre><code>pip install ansible==2.2.0.0
 </code></pre>
 
 <h3 id="install-ansible-with-apt">Install Ansible with apt</h3>
@@ -201,7 +200,7 @@ apt-get install ansible
 </code></pre>
 
 <h3 id="in-some-occasions-additional-packages-may-be-necessary-for-correct-ansible-installation">In some occasions, additional packages may be necessary for correct Ansible installation:</h3>
-<pre><code>apt-get update &amp;&amp; apt-get -y install build-essential libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev 
+<pre><code>apt-get update &amp;&amp; apt-get -y install build-essential libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
 </code></pre>
 
 <h1 id="getting-the-playbook">Getting the playbook</h1>
@@ -246,17 +245,22 @@ This user needs to have sudo rights.</p>
 If you run the playbook a second time, the process will be much faster, since steps that have already been executed will be skipped.
 Whenever you change a variable (see <a href="../customizations/">customizations</a>), you need to run the playbook again.</p>
 <h2 id="deploying-galaxy-kickstart-on-specified-clouds">Deploying galaxy-kickstart on specified clouds</h2>
-<p>Inside the repository you will find a <a href="https://github.com/ARTbio/GalaxyKickStart/tree/master/inventory_files/cloud">file</a> called
-<code>inventory_files/cloud</code>. This file serves as an example hosts file
-for how to deploy galaxy-kickstart on Google Compute Engine(gce), Amazon Web Services(aws), and Jetstream. <em>Please note
-that the <code>ansible_ssh_user</code> variable in the file changes for each remote target</em>.</p>
+<p>Inside the repository you will find a <a href="https://github.com/ARTbio/GalaxyKickStart/tree/master/inventory_files/cloud">file</a>
+called <code>inventory_files/cloud</code>. This file serves as an example hosts file for
+how to deploy galaxy-kickstart on Google Compute Engine (GCE),  Amazon Web
+Services(aws), and Jetstream (OpenStack). <em>Please note that the <code>ansible_user</code>
+variable in the file changes for each remote target</em>. If you are wanting to use
+this playbook on a cloud other than the ones listed  below, you will need to
+update the inventory to add a new section header for the respective target. If
+this happens to be a cloud setup, make sure to add the section header under
+<code>[cloud_setup:children]</code>.</p>
 <p>Specifications for each remote target:</p>
 <ul>
 <li>
-<p>Jetstream</p>
+<p>OpenStack</p>
 <ul>
-<li>Image needed to deploy galaxy-kickstart:
-    <code>Ubuntu 14.04.3 Development (jetstream image id: 3c3db94e-377b-4583-83d7-082d1024d74a)</code></li>
+<li>Image needed to deploy on <a href="http://jetstream-cloud.org/">Jetstream</a>:
+    <code>Ubuntu 14.04.3 Development (jetstream image id: d7fe3289-943f-4417-90e8-8a6b171677ca)</code></li>
 <li>Inventory: <code>&lt;remote host IP&gt; anisble_ssh_user="root" ansible_ssh_private_key_file="&lt;path/to/your/private/key&gt;"</code></li>
 </ul>
 </li>
