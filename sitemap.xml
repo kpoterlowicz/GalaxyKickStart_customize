@@ -89,6 +89,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/GKS2slurm/</loc>
+     <lastmod>2017-04-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
