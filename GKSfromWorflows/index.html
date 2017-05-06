@@ -129,8 +129,6 @@
         
             <li><a class="toctree-l4" href="#run-the-playbook">Run the playbook</a></li>
         
-            <li><a class="toctree-l4" href="#issue-currently-addressed">Issue currently addressed</a></li>
-        
         </ul>
     
 
@@ -202,9 +200,6 @@ ansible-playbook -i inventory_files/GKSfromWorkflow galaxy.yml
 </code></pre>
 
 <p>Check your running Galaxy instance after completion of the playbook. It contains the preinstalled tools as well as the workflow1, workflow2, etc....</p>
-<h3 id="issue-currently-addressed">Issue currently addressed</h3>
-<p>In some occasions, running the playbook with GKSfromWorkflow may end up with tool versions that are not the ones specified in the generated <code>GKSfromWorkflow_tool_list.yml</code> tool list.</p>
-<p>This may cause the workflow(s) to crash. Should this happens, carefully check the installed tool version and install the exact version required. It is possible that some conda packages are used instead of the toolshed dependencies specified by some outdated tool versions.</p>
               
             </div>
           </div>
