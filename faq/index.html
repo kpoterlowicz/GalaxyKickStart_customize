@@ -98,6 +98,9 @@
     <li class="toctree-l2"><a href="#what-is-the-username-and-password-of-the-galaxy-admin-account">What is the username and password of the galaxy admin account ?</a></li>
     
 
+    <li class="toctree-l2"><a href="#how-can-i-set-up-galaxykickstart-behind-a-proxy">How can I set up GalaxyKickStart behind a proxy?</a></li>
+    
+
     </ul>
 	    </li>
           
@@ -177,6 +180,22 @@ galaxy_admin_pw: new_password
 </code></pre>
 
 <p>As with each change, run the playbook again.</p>
+<h2 id="how-can-i-set-up-galaxykickstart-behind-a-proxy">How can I set up GalaxyKickStart behind a proxy?</h2>
+<p>Many commandline utilities can be configured to use a proxy by setting the
+<code>http_proxy</code> and <code>https_proxy</code> environment variables. Tasks launched by ansible
+will only see these environment variables if ansible sets these variables for
+the task. We have included a global <code>proxy_env</code> variable in the galaxy.yml playbook.
+You can set the content of this variable in your inventory or group variables 
+(See <a href="../customizations/">Customizing the playbook</a> for details on how to define variable).
+To use the proxy at http://proxy.bos.example.com:8080 define the variable <code>proxy_env</code> like so:</p>
+<pre><code>proxy_env:
+  http_proxy: http://proxy.bos.example.com:8080
+  https_proxy: http://proxy.bos.example.com:8080
+  no_proxy: localhost,127.0.0.0,127.0.1.1,127.0.1.1,local.home
+</code></pre>
+
+<p>Adresses that should not be contacted through a proxy should be listed in the <code>no_proxy</code> variable.
+An example can be found in group_vars/proxy.</p>
               
             </div>
           </div>
