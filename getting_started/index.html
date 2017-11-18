@@ -73,6 +73,9 @@
         </ul>
     
 
+    <li class="toctree-l2"><a href="#getting-the-playbook">Getting the playbook</a></li>
+    
+
     <li class="toctree-l2"><a href="#deploying-galaxy-kickstart-on-remote-machines">Deploying galaxy-kickstart on remote machines.</a></li>
     
         <ul>
@@ -195,44 +198,37 @@
 <pre><code>sudo pip install -U pip
 </code></pre>
 
-<p>$ pip --version
-pip 9.0.1 from /usr/local/lib/python2.7/site-packages (python 2.7)</p>
-<pre><code>
-- Then
-
+<pre><code>$ pip --version
+pip 9.0.1 from /usr/local/lib/python2.7/site-packages (python 2.7)
 </code></pre>
 
-<p>pip install ansible==2.2.0.0</p>
-<pre><code>### Install Ansible with apt
-
-Alternatively, Ansible may be installed with the Apt package manager (Ubuntu):
-
+<ul>
+<li>Then</li>
+</ul>
+<pre><code>pip install ansible==2.2.0.0
 </code></pre>
 
-<p>sudo -i
+<h3 id="install-ansible-with-apt">Install Ansible with apt</h3>
+<p>Alternatively, Ansible may be installed with the Apt package manager (Ubuntu):</p>
+<pre><code>sudo -i
 apt-get install software-properties-common
 apt-add-repository ppa:ansible/ansible
 apt-get update
-apt-get install ansible</p>
-<pre><code>
-# Getting the playbook
-
-[//]: # (TODO: Once we do releases, we include the submodules and hence users can just download the playbook without git)
-
-GalaxyKickStart is hosted on
-[github](https://github.com/ARTbio/GalaxyKickStart.git) and uses a number of
-dependent Ansible roles that need to be downloaded as part of the installation
-step:
-
+apt-get install ansible
 </code></pre>
 
-<p>git clone https://github.com/ARTbio/GalaxyKickStart.git
+<h1 id="getting-the-playbook">Getting the playbook</h1>
+<p>GalaxyKickStart is hosted on
+<a href="https://github.com/ARTbio/GalaxyKickStart.git">github</a> and uses a number of
+dependent Ansible roles that need to be downloaded as part of the installation
+step:</p>
+<pre><code>git clone https://github.com/ARTbio/GalaxyKickStart.git
 cd GalaxyKickStart
-ansible-galaxy install -r requirements_roles.yml -p roles</p>
-<pre><code>
-The playbook (here `galaxy.yml`) should be in the GalaxyKickStart folder.
-```bash
-ls
+ansible-galaxy install -r requirements_roles.yml -p roles
+</code></pre>
+
+<p>The playbook (here <code>galaxy.yml</code>) should be in the GalaxyKickStart folder.</p>
+<pre><code class="bash">ls
 CONTRIBUTORS.md     Vagrantfile     docs            inventory_files     roles
 Dockerfile      ansible.cfg     extra-files     mkdocs.yml      scripts
 LICENSE.txt     deploy.sh       galaxy.yml      pre-commit.sh       startup.sh
