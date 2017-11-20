@@ -12,12 +12,12 @@
         }, 
         {
             "location": "/about/", 
-            "text": "GalaxyKickStart\n\n\nGalaxyKickStart is an Ansible playbook designed to help you get one or more production-ready\n \nGalaxy servers\n based on Ubuntu within minutes, and to maintain these servers.\n\n\nRequired ansible version \n= 2.1.2.0\n\n\nOptionally, instances can be pre-loaded with tools and workflows.\n\n\nThe playbook has been tested on \n\n\n\n\nCloud Machines\n\n\nVagrant Boxes\n\n\nPhysical Servers \n\n\nDocker.\n\n\n\n\nGalaxyKickStart has been developed at the \nARTbio platform\n and contains roles developed\nby the \nGalaxy team\n.\n\n\nList of roles included in this playbook\n\n\n\n\nensure_postrgesql_up\n\n\ngalaxy-extras role\n\n\ngalaxy-tools role\n\n\ngalaxy-os role\n\n\ngalaxy role\n\n\ngalaxy-trackster role\n\n\nnatefoo-postgresql_objects\n\n\nminiconda-role", 
+            "text": "GalaxyKickStart\n\n\nGalaxyKickStart is an Ansible \nplaybook\n designed to help you get one or more production-ready\n \nGalaxy servers\n based on Ubuntu within minutes, and to maintain these servers.\n\n\nRequired ansible version \n= 2.1.2.0\n\n\nOptionally, instances can be pre-loaded with tools and workflows.\n\n\nThe playbook has been tested on \n\n\n\n\nCloud Machines\n\n\nVagrant Boxes\n\n\nPhysical Servers \n\n\nDocker.\n\n\n\n\nGalaxyKickStart has been developed at the \nARTbio platform\n and contains roles developed\nby the \nGalaxy team\n.\n\n\nList of roles included in this playbook\n\n\n\n\nensure_postrgesql_up\n\n\ngalaxy-extras role\n\n\ngalaxy-tools role\n\n\ngalaxy-os role\n\n\ngalaxy role\n\n\ngalaxy-trackster role\n\n\nnatefoo-postgresql_objects\n\n\nminiconda-role", 
             "title": "What is GalaxyKickStart"
         }, 
         {
             "location": "/about/#galaxykickstart", 
-            "text": "GalaxyKickStart is an Ansible playbook designed to help you get one or more production-ready\n  Galaxy servers  based on Ubuntu within minutes, and to maintain these servers.", 
+            "text": "GalaxyKickStart is an Ansible  playbook  designed to help you get one or more production-ready\n  Galaxy servers  based on Ubuntu within minutes, and to maintain these servers.", 
             "title": "GalaxyKickStart"
         }, 
         {
