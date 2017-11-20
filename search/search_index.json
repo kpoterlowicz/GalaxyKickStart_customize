@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "GalaxyKickStart\n\n\nGalaxyKickStart is an \nAnsible\n playbook designed for installing, testing, deploying and \nmaintaining production-grade Galaxy instances.\n\nIn the basic configuration, this includes:\n\n\n\n\npostgresql server as database backend \n\n\nnginx proxy \n\n\nslurm cluster\n\n\n\n\nIn adition, tools and workflows can be managed.", 
+            "text": "GalaxyKickStart\n\n\nGalaxyKickStart is an \nAnsible\n playbook designed for installing, testing, deploying and \nmaintaining production-grade Galaxy instances. GalaxyKickStart playbook code is available in \nGitHub\n. \nIn the basic configuration, the deployed Galaxy server includes:\n\n\n\n\npostgresql server as database backend \n\n\nnginx proxy \n\n\nslurm cluster\n\n\n\n\nIn addition, tools and workflows can be pre-installed during the deployment.", 
             "title": "Home"
         }, 
         {
             "location": "/#galaxykickstart", 
-            "text": "GalaxyKickStart is an  Ansible  playbook designed for installing, testing, deploying and \nmaintaining production-grade Galaxy instances. \nIn the basic configuration, this includes:   postgresql server as database backend   nginx proxy   slurm cluster   In adition, tools and workflows can be managed.", 
+            "text": "GalaxyKickStart is an  Ansible  playbook designed for installing, testing, deploying and \nmaintaining production-grade Galaxy instances. GalaxyKickStart playbook code is available in  GitHub . \nIn the basic configuration, the deployed Galaxy server includes:   postgresql server as database backend   nginx proxy   slurm cluster   In addition, tools and workflows can be pre-installed during the deployment.", 
             "title": "GalaxyKickStart"
         }, 
         {
