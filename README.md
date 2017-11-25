@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/ARTbio/GalaxyKickStart.svg?branch=master)](https://travis-ci.org/ARTbio/GalaxyKickStart)
 
-# Metavisitor Build branch
+# pasteur Build branch
 
-Use this branch to build a Galaxy [Metavisitor](https://github.com/ARTbio/Metavisitor-manual)
+Use this branch to build a Galaxy `pasteur` galaxykickstart instance
 Instance.
 A corresponding Docker container may be pull by
 ```
-docker pull artbio/metavisitor-1.2
+docker pull artbio/pasteur-1
 ```
 
 ## GalaxyKickStart
