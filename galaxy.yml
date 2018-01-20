@@ -25,6 +25,21 @@
     - set_fact:
         banner_img: "{% if 'jetstream' in group_names %}jetstream_text.png{% else %}gce_text.png{% endif %}"
 
+    - name: Create Galaxy user
+      user:
+        name: "galaxy"
+        home: "/srv/galaxy"
+        skeleton: "/etc/skel"
+        shell: "/bin/bash"
+        system: yes
+           
+    - name: Update /etc/hosts
+      replace:
+        dest: /etc/hosts
+        regexp: '^127.0.0.1 localhost'
+        replace: '127.0.0.1 localhost {{ ansible_hostname }}'
+        backup: yes
+
   roles:
 
     - role: galaxyprojectdotorg.galaxy-os

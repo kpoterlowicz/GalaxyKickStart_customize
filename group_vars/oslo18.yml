@@ -1,0 +1,46 @@
+galaxy_admin: kpoterl1@galaxy.org  # <- change this
+galaxy_admin_pw: admin18
+
+galaxy_root_dir: /srv/galaxy
+galaxy_server_dir: "{{ galaxy_root_dir }}/server"
+galaxy_venv_dir: "{{ galaxy_root_dir }}/venv"
+galaxy_mutable_data_dir: "{{ galaxy_data }}"
+proftpd_files_dir: "{{ galaxy_data }}/ftp"
+galaxy_config_dir: "{{ galaxy_root_dir }}/config"
+galaxy_mutable_config_dir: "{{ galaxy_config_dir }}"
+galaxy_shed_tools_dir: "{{ galaxy_root_dir }}/shed_tools"
+galaxy_tool_dependency_dir: "{{ galaxy_root_dir }}/dependencies"
+tool_dependency_dir: "{{ galaxy_tool_dependency_dir }}"
+galaxy_job_conf_path: "{{ galaxy_config_dir }}/job_conf.xml"
+galaxy_job_metrics_conf_path: "{{ galaxy_config_dir }}/job_metrics_conf.xml"
+nginx_upload_store_path: "{{ galaxy_data }}/upload_store"
+tool_data_table_config_path: "{{ galaxy_config_dir }}/tool_data_table_conf.xml,/cvmfs/data.galaxyproject.org/managed/location/tool_data_table_conf.xml"
+len_file_path: "{{ galaxy_config_dir }}/len"
+galaxy_log_dir: "{{ galaxy_root_dir }}/log"
+supervisor_slurm_config_dir: "{{ galaxy_log_dir }}"
+
+galaxy_manage_trackster: False
+galaxy_extras_config_cvmfs: True
+galaxy_restart_handler_enabled: True
+
+galaxy_config:
+  "app:main":
+    database_connection: "{{ galaxy_db }}"
+    file_path: "{{ galaxy_data }}/datasets"
+    new_file_path: "{{ galaxy_data }}/tmp"
+    galaxy_data_manager_data_path: "{{ galaxy_data }}/tool-data"
+    job_config_file: "{{ galaxy_job_conf_path }}"
+    ftp_upload_dir: "{{ proftpd_files_dir }}"
+    ftp_upload_site: ftp://[server IP address]
+    tool_data_table_config_path: "{{ tool_data_table_config_path }}"
+    len_file_path: "{{ len_file_path }}"
+  "uwsgi":
+    master: True
+
+galaxy_tools_tool_list_files:
+  - "extra-files/galaxy-kickstart/galaxy-kickstart_tool_list.yml"
+
+additional_files_list:
+  - { src: "extra-files/galaxy-kickstart/logo.png", dest: "{{ galaxy_server_dir }}/static/images/" }
+  - { src: "extra-files/tool_sheds_conf.xml", dest: "{{ galaxy_config_dir }}" }
+  - { src: "extra-files/cloud_setup/vimrc", dest: "/etc/vim/" }
