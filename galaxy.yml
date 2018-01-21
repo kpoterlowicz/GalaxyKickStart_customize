@@ -33,13 +33,6 @@
         shell: "/bin/bash"
         system: yes
            
-    - name: Update /etc/hosts
-      replace:
-        dest: /etc/hosts
-        regexp: '^127.0.0.1 localhost'
-        replace: '127.0.0.1 localhost {{ ansible_hostname }}'
-        backup: yes
-
   roles:
 
     - role: galaxyprojectdotorg.galaxy-os
